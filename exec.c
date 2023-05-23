@@ -1,6 +1,13 @@
 #include "main.h"
 
 
+/**
+ *exec - execution function
+ *@argv: array of strings.
+ *@file:file name.
+ *@env:environment variable.
+ */
+
 int exec(char **argv, char **env, char *file)
 {
     char *cmd = NULL;
@@ -13,28 +20,31 @@ int exec(char **argv, char **env, char *file)
         
         if(cmd != NULL)
         {
-        if (_path(cmd) != NULL)
+        if (full_path!= NULL)
         {
-        if(execve(full_path, argv, env) == -1)
-            {
-                free(full_path);
-                perror("haha");
-            }
+        execve(full_path, argv, env);
+            
+        }
+        else if (full_path == NULL)
+        {
+            execve(argv[0], argv, env);
         }
         if(isatty(STDIN_FILENO))
         {
             perror(file);
+            
         }
         else
         {
             handle_error(argv, file);
+            
             
         }
         
         free(full_path);
         return -1;
         }
+        
     }
     return 0;
-
 }

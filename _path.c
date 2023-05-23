@@ -1,6 +1,11 @@
 
 #include  "main.h"
 
+/**
+ *_path - path to the cmd directory.
+ * @path_ptr: pointer to the cmd.
+ * Return: pointer to the cmd or NULL.
+ */
 
 char * _path(char * path_ptr)
     {
@@ -9,7 +14,6 @@ char * _path(char * path_ptr)
         int dir_len;
         char *p_token;
         struct stat st;
-        int i = 0;
 
         if(path_ptr == NULL)
         return NULL;
