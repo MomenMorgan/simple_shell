@@ -1,13 +1,14 @@
 #include "main.h"
 
-int _fork(char **argv,char  **env, int argc)
+int _fork(char **argv,char  **env, int argc, char *file)
 {
     pid_t pid;
     int status;
     char **tokins;
+    int ex ;
+
     
-    
-    pid = fork();
+   pid = fork();
     if(pid < 0) 
     {
         return (-1);
@@ -17,8 +18,9 @@ int _fork(char **argv,char  **env, int argc)
     {
         
         tokins = argv;
-        if(exec(tokins,env) == -1)
+        if(exec(tokins,env, file) == -1)
         {
+        
             return (-1);
         }
         

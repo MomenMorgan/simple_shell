@@ -12,6 +12,7 @@ void init(int argc, char **argv, char **env)
     size_t size = 0;
     int i = 0, j ,t;
     char ** tokens;
+    char *ar = argv[0];
 
     while(1001)
     {
@@ -24,7 +25,6 @@ void init(int argc, char **argv, char **env)
                     free(get_line);
                     exit(0);
                 }
-
              tokens =  _tok(get_line, line_chars, argv);
 
                 j = _tok_count(tokens);
@@ -40,17 +40,16 @@ void init(int argc, char **argv, char **env)
                     {
                       free(get_line);
                     free_tokens(tokens, j);
-                    exit(EXIT_FAILURE);
+                    exit(0);
                     }
-                    if(_fork(tokens, env, j) == -1)
+                    if(_fork(tokens, env, argc, ar) == -1)
                     {
                         free(get_line);
                     free_tokens(tokens, j);
-                    exit(EXIT_FAILURE);
+                    exit(127);
                     }
-            
                     free_tokens(tokens, j);
-
+                    
                  }
     free(get_line);
     exit(0);

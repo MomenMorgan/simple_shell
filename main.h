@@ -19,12 +19,13 @@ char *my_strcpy(char *destination, const char *source);
 char *my_strcat(char *des, const char *sour);
 unsigned int my_strlen(const char *s);
 char * _path(char * path);
-int _fork(char **argv,char  **env, int argc);
-int exec(char **argv, char **env);
+int _fork(char **argv,char  **env, int argc, char *file);
+int exec(char **argv, char **env, char *file);
 int _tok_count(char **argv);
 char **_tok(char * line_char, ssize_t size, char **argv);
 void free_tokens(char **token, int count);
+void handle_error(char **argv, char *file);
 
-#endif // !MAIN_H
 
+#endif // !MAIN_
 

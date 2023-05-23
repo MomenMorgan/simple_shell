@@ -1,7 +1,7 @@
 #include "main.h"
 
 
-int exec(char **argv, char **env)
+int exec(char **argv, char **env, char *file)
 {
     char *cmd = NULL;
     char * full_path = NULL;
@@ -18,11 +18,19 @@ int exec(char **argv, char **env)
         if(execve(full_path, argv, env) == -1)
             {
                 free(full_path);
-                perror("execve");
+                perror("haha");
             }
         }
-        perror("execve");
-        // exit(EXIT_FAILURE);
+        if(isatty(STDIN_FILENO))
+        {
+            perror(file);
+        }
+        else
+        {
+            handle_error(argv, file);
+            
+        }
+        
         free(full_path);
         return -1;
         }
