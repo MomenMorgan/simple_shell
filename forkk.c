@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * my_fork - forking the process.
+ *_fork - forking the process.
  * @argv:array of strings to be passed.
  *@file: file name.
  *@env: environment variable
@@ -11,8 +11,8 @@ int _fork(char **argv, char  **env, char *file)
 	pid_t pid;
 	int status;
 	char **tokins;
-	pid = fork();
 
+	pid = fork();
 	if (pid < 0)
 	{
 		return (-1);
