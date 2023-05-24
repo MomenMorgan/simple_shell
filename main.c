@@ -7,16 +7,13 @@
  *@env: environment varible.
  */
 
-int main ( int argc, char **argv, char **env)
-        {
-          
-            if(argc == 1)
-                init(argv, env);
+int main(int argc, char **argv, char **env)
+{
 
-             
-              
-            return (0);
-        }
+	if (argc == 1)
+		init(argv, env);
+	return (0);
+}
 
-        
+
 
