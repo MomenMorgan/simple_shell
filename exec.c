@@ -4,6 +4,7 @@
  *@argv: array of strings.
  *@file:file name.
  *@env:environment variable.
+ *Return: 0 or -1.
  */
 int exec(char **argv, char **env, char *file)
 {

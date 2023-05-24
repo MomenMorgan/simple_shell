@@ -7,10 +7,10 @@
 char *_path(char *path_ptr)
 {
 	char *loc, *loc_cpy, *file;
-	int cmd_len;
-	int dir_len;
+	int cmd_len, dir_len;
 	char *p_token;
 	struct stat st;
+
 	if (path_ptr == NULL)
 		return (NULL);
 	loc = _getenv("PATH");

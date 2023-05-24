@@ -5,6 +5,7 @@
  *@argv: array of strings.
  *@argc: argc number of arguments.
  *@env: environment varible.
+ *Return: 0.
  */
 
 int main(int argc, char **argv, char **env)

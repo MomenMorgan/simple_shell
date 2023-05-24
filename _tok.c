@@ -7,6 +7,7 @@
 int _tok_count(char **argv)
 {
 	int i = 0;
+
 	while (argv[i] != NULL)
 	{
 		i++;
