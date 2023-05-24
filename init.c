@@ -6,14 +6,14 @@
  */
 void init(char **argv, char **env)
 {
-char *prompt = "$ ", get_line = NULL;
+char *prompt = "$ ";
+char *get_line = NULL;
 ssize_t line_chars;
 size_t size = 0;
 int j;
 char **tokens;
 char *ar = argv[0];
 while (1001)
-
 {
 if (isatty(STDIN_FILENO))
 write(STDERR_FILENO, prompt, 2);
